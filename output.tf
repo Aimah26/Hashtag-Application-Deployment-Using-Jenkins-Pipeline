@@ -15,11 +15,11 @@ output "Jenkins-ip" {
 }
 
 output "jenkins-elb-dns" {
-  value = module.jenkins-elb.jenkins_elb_dns
+  value = module.jenkins_elb.jenkins_elb_dns
 }
 
 output "prod_elb_dns" {
-  value = module.jenkins_elb.jenkins_elb_dns
+  value = module.Prod_elb.prod_elb_dns
 }
 
 output "Sonar-pub_ip" {

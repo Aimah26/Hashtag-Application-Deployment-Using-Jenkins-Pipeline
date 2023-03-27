@@ -84,7 +84,7 @@ module "jenkins_elb" {
   jenkins_id = module.Jenkins.id
 }
 module "Prod_elb" {
-  source = "/Users/fidelis/Documents/VScode/Containerization-Ansible-Auto-Discovery-Day-Team/06-MAR-Pet-Adoption-Containerisation-Ansible-Auto-discovery-Project-Day-Session/local_module/Prod_elb copy"
+  source = "./local_module/Prod_elb "
   subnet_id1 = module.vpc.public_subnets[0]
   subnet_id2 = module.vpc.public_subnets[1]
   security_id = module.sg.alb-sg-id

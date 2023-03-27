@@ -1,5 +1,5 @@
 variable "jenkins_elb_name" {
-  default = "jenkins_elb"
+  default = "jenkins-elb"
 }
 
 variable "subnet_id1" {
