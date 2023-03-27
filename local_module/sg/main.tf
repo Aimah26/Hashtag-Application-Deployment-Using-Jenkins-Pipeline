@@ -3,7 +3,7 @@
 resource "aws_security_group" "Hash_Ansible_SG" {
   name        = "${var.name}-Ansible-sg"
   description = "Allow Inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "Allow ssh access"
@@ -37,7 +37,7 @@ resource "aws_security_group" "Hash_Ansible_SG" {
 resource "aws_security_group" "Hash_Docker_SG" {
   name        = "${var.name}-Docker-sg"
   description = "Allow Inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "Allow ssh access"
@@ -87,7 +87,7 @@ resource "aws_security_group" "Hash_Docker_SG" {
 resource "aws_security_group" "Hash_Jenkins_SG" {
   name        = "${var.name}-Jenkins-sg"
   description = "Allow Inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "Allow ssh access"
@@ -129,7 +129,7 @@ resource "aws_security_group" "Hash_Jenkins_SG" {
 resource "aws_security_group" "Hash_Sonarqube_SG" {
   name        = "${var.name}-Sonarqube-sg"
   description = "Allow Inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "Allow ssh access"
@@ -172,7 +172,7 @@ resource "aws_security_group" "Hash_Sonarqube_SG" {
 resource "aws_security_group" "Hash_ALB_SG" {
   name        = "${var.name}-ALB-sg"
   description = "Allow Inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "Allow ssh access"
@@ -214,7 +214,7 @@ resource "aws_security_group" "Hash_ALB_SG" {
 resource "aws_security_group" "Hash_bastion_SG" {
   name        = "${var.name}-bastion-sg"
   description = "Allow Inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "Allow ssh access"
@@ -248,7 +248,7 @@ resource "aws_security_group" "Hash_bastion_SG" {
 resource "aws_security_group" "Hash_DB_Backend_SG" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic"
-  vpc_id      = var.eud-vpc
+  vpc_id      = var.Hash-vpc
 
   ingress {
     description = "MYSQL_port"

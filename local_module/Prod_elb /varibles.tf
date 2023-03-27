@@ -1,5 +1,9 @@
-variable "jenkins_elb_name" {
-  default = "jenkins_elb"
+variable "Prod_elb_name" {
+  default = "Prod-elb"
+}
+
+variable "Prod_id" {
+  default = "dummy"
 }
 
 variable "subnet_id1" {
@@ -19,5 +23,5 @@ variable "jenkins_id" {
 }
 
 variable "instance_prt" {
-  default = 8085
+  default = 8080
 }
