@@ -1,5 +1,5 @@
 variable "name_lb" {
-    default = "pacaad-lb"
+    default = "Hash-lb"
 }
 
 variable "lb_security" {
@@ -19,7 +19,7 @@ variable "env" {
 }
 
 variable "lb_TG_name" {
-    default = "pacaad-lb-TG"
+    default = "Hash-lb-TG"
 }
 
 variable "vpc_name" {

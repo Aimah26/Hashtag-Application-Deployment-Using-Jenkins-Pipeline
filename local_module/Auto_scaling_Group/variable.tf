@@ -1,5 +1,5 @@
 variable "asg-group-name"{
-    default = "pacaad_asg"
+    default = "Hash_asg"
 }
 variable "vpc_subnet1" {
     default = "dummy"
@@ -11,10 +11,10 @@ variable "lb_arn" {
     default = "dummy"
 }
 variable "asg-policy" {
-    default = "pacaad_asg_policy"
+    default = "Hash_asg_policy"
 }
 variable "lc_name" {
-    default = "pacaad_lc_name"
+    default = "Hash_lc_name"
 }
 variable "lc_instance_type" {
     default = "t3.medium"
@@ -26,7 +26,7 @@ variable "key_pair" {
     default = "dummy"
 }
 variable "launch_ami_name" {
-    default = "pacaad_lc_ami"
+    default = "Hash_lc_ami"
 }
 variable "ami_source_instance" {
     default = "dummy"

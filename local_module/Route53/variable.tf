@@ -1,3 +1,3 @@
-# variable "prod_lb_dns" {}
+variable "lb_DNS" {}
 
-# variable "prod_lb_zone" {}
+variable "lb_zone_id" {}

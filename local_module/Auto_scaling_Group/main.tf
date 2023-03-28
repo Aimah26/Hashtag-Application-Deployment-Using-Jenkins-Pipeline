@@ -1,5 +1,5 @@
 # Creating Auto Scaling Group
-resource "aws_autoscaling_group" "pacaad_ASG" {
+resource "aws_autoscaling_group" "Hash_ASG" {
 name = var.asg-group-name
 max_size = 4
 min_size = 2
@@ -7,7 +7,7 @@ desired_capacity = 3
 health_check_grace_period = 300
 health_check_type  = "EC2"
 force_delete = true
-launch_configuration = aws_launch_configuration.pacaad_launch_config.id
+launch_configuration = aws_launch_configuration.Hash_launch_config.id
 vpc_zone_identifier  = [var.vpc_subnet1, var.vpc_subnet2]
 target_group_arns = [var.lb_arn]
 tag{
@@ -18,11 +18,11 @@ tag{
 }
 
 #Creating Auto Scaling Group Policy
-resource "aws_autoscaling_policy" "pacaad_ASG_POLICY" {
+resource "aws_autoscaling_policy" "Hash_ASG_POLICY" {
 name  = var.asg-policy
 adjustment_type = "ChangeInCapacity"
 policy_type = "TargetTrackingScaling"
-autoscaling_group_name = aws_autoscaling_group.pacaad_ASG.id
+autoscaling_group_name = aws_autoscaling_group.Hash_ASG.id
 target_tracking_configuration {
     predefined_metric_specification {
       predefined_metric_type = "ASGAverageCPUUtilization"
@@ -31,9 +31,9 @@ target_tracking_configuration {
   }    
 }
 #creating ASG Launch Configuration
-resource "aws_launch_configuration" "pacaad_launch_config" {
+resource "aws_launch_configuration" "Hash_launch_config" {
   name          = var.lc_name
-  image_id      = aws_ami_from_instance.pacaad_ami.id
+  image_id      = aws_ami_from_instance.Hash_ami.id
   instance_type = var.lc_instance_type
   associate_public_ip_address = true
   security_groups = [var.asg_sg]
@@ -41,7 +41,7 @@ resource "aws_launch_configuration" "pacaad_launch_config" {
 }
 
 #creating AMI from Instance
-resource "aws_ami_from_instance" "pacaad_ami" {
+resource "aws_ami_from_instance" "Hash_ami" {
   name               = var.launch_ami_name
   source_instance_id = var.ami_source_instance
 }
