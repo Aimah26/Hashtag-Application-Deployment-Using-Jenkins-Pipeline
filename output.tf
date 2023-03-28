@@ -1,13 +1,13 @@
 output "vpc_id" {
-  value  = module.vpc.vpc_id
+  value = module.vpc.vpc_id
 }
 
 output "Bastion_ip" {
-  value  = module.Bastion.public_ip
+  value = module.Bastion.public_ip
 }
 
 output "Docker_ip" {
-  value  = module.Docker.*.private_ip
+  value = module.Docker.*.private_ip
 }
 
 output "Jenkins-ip" {
@@ -31,6 +31,10 @@ output "Ansible-ip" {
 
 output "lb_DNS" {
   value = module.App_loadbalancer.lb_DNS
+}
+
+output "lb_zone_id" {
+  value = module.App_loadbalancer.lb_zone_id
 }
 
 

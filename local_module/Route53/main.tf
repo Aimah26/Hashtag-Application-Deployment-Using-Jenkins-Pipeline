@@ -35,15 +35,15 @@ resource "aws_acm_certificate_validation" "jas_cert_valdt" {
   validation_record_fqdns = [for record in aws_route53_record.Hash_r53_record : record.fqdn]
 }
 
-# resource "aws_route53_record" "www" {
-#  zone_id         = data.aws_route53_zone.Hash_r53_zone.zone_id
-#   name    = "adfimah.com"
-#   type    = "A"
+resource "aws_route53_record" "www" {
+ zone_id         = data.aws_route53_zone.Hash_r53_zone.zone_id
+  name    = "adfimah.com"
+  type    = "A"
 
-#   alias {
-#     # name                   = var.prod_elb_dns
-#     # zone_id                = var.prod_lb_zone
-#     evaluate_target_health = true
-#   }
-# }
+  alias {
+    name                   = var.lb_DNS
+    zone_id                = var.lb_zone_id
+    evaluate_target_health = true
+  }
+}
 
